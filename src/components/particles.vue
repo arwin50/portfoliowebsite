@@ -4,7 +4,7 @@
       id="tsparticles"
       :particlesLoaded="particlesLoaded"
       url="http://foo.bar/particles.json"
-      class="h-full"
+      class="h-full opacity-40"
     />
 
     <vue-particles
@@ -74,7 +74,7 @@
             value: 20,
           },
           opacity: {
-            value: 0.4,
+            value: 1,
           },
           shape: {
             type: 'circle',
