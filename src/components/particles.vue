@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
+  <div>
     <vue-particles
       id="tsparticles"
       :particlesLoaded="particlesLoaded"
       url="http://foo.bar/particles.json"
+      class="h-full"
     />
 
     <vue-particles
@@ -16,24 +17,24 @@
           },
         },
         fullScreen: {
-          enable: true,
+          enable: false,
           zIndex: -100,
         },
         fpsLimit: 120,
         interactivity: {
           events: {
             onClick: {
-              enable: true,
+              enable: false,
               mode: 'push',
             },
             onHover: {
-              enable: true,
+              enable: false,
               mode: 'repulse',
             },
           },
           modes: {
             bubble: {
-              distance: 400,
+              distance: 500,
               duration: 2,
               opacity: 0.8,
               size: 40,
@@ -42,7 +43,7 @@
               quantity: 4,
             },
             repulse: {
-              distance: 200,
+              distance: 100,
               duration: 0.4,
             },
           },
@@ -53,33 +54,33 @@
           },
           links: {
             color: '#ffffff',
-            distance: 150,
+            distance: 300,
             enable: true,
             opacity: 0.5,
-            width: 1,
+            width: 3,
           },
           move: {
-            direction: 'none',
+            direction: 'left',
             enable: true,
-            outModes: 'bounce',
+            outModes: 'out',
             random: false,
-            speed: 6,
-            straight: false,
+            speed: 1,
+            straight: true,
           },
           number: {
             density: {
               enable: true,
             },
-            value: 80,
+            value: 20,
           },
           opacity: {
-            value: 0.5,
+            value: 0.4,
           },
           shape: {
             type: 'circle',
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 5, max: 13 },
           },
         },
         detectRetina: true,

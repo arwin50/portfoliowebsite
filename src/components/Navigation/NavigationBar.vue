@@ -1,11 +1,12 @@
 <template>
-  <header>
-    <nav class="w-full flex text-white px-2 justify-between pt-6 items-center" >
-     <a href=""><span class="text-3xl ml-40">&#123 niw &#125</span></a>
-      <ul class="flex text-xl mr-52 space-x-20">
-        <li class="hover:text-[#ffe169]"><a href="">projects</a></li>
-        <li class="hover:text-[#ffe169]"><a href="">experience</a></li>
-        <li class="hover:text-[#ffe169]"><a href="">resume</a></li>
+  <header class="h-[10%]   ">
+    <nav class="w-full flex text-white px-2 justify-between pt-6 items-center">
+     <span class="text-3xl ml-40 tracking-widest"><a href="">&#123 niw &#125</a></span>
+      <ul class="flex text-lg mr-52 space-x-10 tracking-wide  ">
+        <li class="hover:text-[#ffe169] "><a href="#" class="hover:shadow p-2 rounded-lg">projects</a></li>
+        <li class="hover:text-[#ffe169]"><a href="#" class="hover:shadow p-2 rounded-lg">experience</a></li>
+        <li class="hover:text-[#ffe169]"><a href="#" class="hover:shadow p-2 rounded-lg">education</a></li>
+        <li class="hover:text-[#ffe169]"><a href="#" class="hover:shadow p-2 rounded-lg">resume</a></li>
       </ul>
     </nav>
   </header>

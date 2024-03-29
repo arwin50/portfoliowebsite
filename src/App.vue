@@ -6,7 +6,6 @@ import NavigationBar from "./components/Navigation/NavigationBar.vue";
 
 <template>
   <div class="h-full font-main relative">
-    <Particles class="absolute z-[-50] top-0 left-0 right-0 bottom-0" />
     <NavigationBar />
     <RouterView />
   </div>
