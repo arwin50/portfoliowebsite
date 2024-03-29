@@ -13,11 +13,11 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-
-app.mount("#app");
 app.use(Particles, {
   init: async (engine) => {
     /* await loadFull(engine);*/
     await loadSlim(engine);
   },
 });
+
+app.mount("#app");

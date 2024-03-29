@@ -1,12 +1,12 @@
 <script setup>
 import { RouterView } from "vue-router";
-import particles from "./components/particles.vue";
+import Particles from "./components/particles.vue";
 import NavigationBar from "./components/Navigation/NavigationBar.vue";
 </script>
 
 <template>
   <div class="h-full font-main relative">
-    <particles class="absolute z-[-50] top-0 left-0 right-0 bottom-0" />
+    <Particles class="absolute z-[-50] top-0 left-0 right-0 bottom-0" />
     <NavigationBar />
     <RouterView />
   </div>
