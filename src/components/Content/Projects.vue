@@ -2,7 +2,7 @@
   <div class="h-screen">
     <main class="flex h-full space-x-16">
       <span
-        class="verticalUpright ml-24 text-5xl flex justify-center tracking-widest font-bold"
+        class="verticalUpright ml-24 text-5xl flex justify-center tracking-widest font-bold drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]"
         >PROJECTS</span
       >
       <div
@@ -39,10 +39,14 @@
           </div>
         </div>
         <button @click="prev" class="absolute left-10 top-64">
-          <v-icon name="io-arrow-back-circle-sharp" scale="2" />
+          <v-icon name="io-arrow-back-circle-sharp" scale="2" fill="#d6ccc2" />
         </button>
         <button @click="next" class="absolute right-10 top-64">
-          <v-icon name="io-arrow-forward-circle-sharp" scale="2" />
+          <v-icon
+            name="io-arrow-forward-circle-sharp"
+            scale="2"
+            fill="#d6ccc2"
+          />
         </button>
       </div>
     </main>
