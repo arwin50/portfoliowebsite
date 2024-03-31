@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tsparticles/vue3": "^3.0.1",
+    "oh-vue-icons": "^1.0.0-rc3",
     "pinia": "^2.1.7",
     "tsparticles": "^3.3.0",
     "vue": "^3.4.21",
