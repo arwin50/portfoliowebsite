@@ -26,7 +26,7 @@
               </div>
 
               <h2 class="text-lg font-semibold">{{ project.name }}</h2>
-              <p class="text-sm text-gray-600">{{ project.type }}</p>
+              <p class="text-sm text-[#6c757d]">{{ project.type }}</p>
               <p class="mt-2">{{ project.Description }}</p>
               <div class="mt-2 flex flex-wrap">
                 <span
@@ -83,7 +83,7 @@ const projects = reactive([
     type: "Personal Project",
     Description:
       "Anonymous Letters is a platform for sending messages using codenames.",
-    TechStack: ["React", "MongoDB", "TailwindCSS", "ExpressJS"],
+    TechStack: ["React", "MongoDB", "TailwindCSS", "ExpressJS", "NodeJS"],
   },
   {
     image: WiMovieImage,
