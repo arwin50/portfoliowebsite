@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen">
+  <div class="h-screen" id="projects">
     <main class="flex h-full space-x-16">
       <span
         class="verticalUpright ml-24 text-5xl flex justify-center tracking-widest font-bold drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]"
@@ -17,25 +17,52 @@
             :key="index"
             class="w-full flex-shrink-0 px-4 relative"
           >
-            <div class="p-4 rounded-lg">
-              <div class="w-full h-96">
-                <img
-                  :src="project.image"
-                  class="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-
-              <h2 class="text-lg font-semibold">{{ project.name }}</h2>
-              <p class="text-sm text-[#6c757d]">{{ project.type }}</p>
-              <p class="mt-2">{{ project.Description }}</p>
-              <div class="mt-2 flex flex-wrap">
-                <span
-                  v-for="(value, index) in project.TechStack"
-                  class="mr-2 mb-2 bg-[#588157] px-2 py-1 rounded"
-                  >{{ value }}</span
+            <a :href="project.link"
+              ><div class="p-4 rounded-lg">
+                <div
+                  class="w-full h-96 mb-5 rounded-lg overflow-hidden"
+                  @mouseenter="hovered"
+                  @mouseleave="hovered"
                 >
+                  <img
+                    :src="project.image"
+                    class="w-full h-full object-cover cursor-pointer shadow-button"
+                    :class="{
+                      'hover:opacity-30 hover:transition-opacity duration-500':
+                        isHovered,
+                    }"
+                  />
+                  <div
+                    v-if="isHovered"
+                    class="absolute pointer-events-none flex items-center gap-2"
+                    style="
+                      top: 35%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                    "
+                  >
+                    <img
+                      src="@/assets/github-mark-white.svg"
+                      class="w-16 h-16"
+                    />
+                    <span class="text-2xl font-link tracking-wide"
+                      >Check it out!</span
+                    >
+                  </div>
+                </div>
+
+                <h2 class="text-lg font-semibold">{{ project.name }}</h2>
+                <p class="text-sm text-[#6c757d]">{{ project.type }}</p>
+                <p class="mt-2">{{ project.Description }}</p>
+                <div class="mt-2 flex flex-wrap">
+                  <span
+                    v-for="(value, index) in project.TechStack"
+                    class="mr-2 mb-2 bg-[#588157] px-2 py-1 rounded"
+                    >{{ value }}</span
+                  >
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <button @click="prev" class="absolute left-10 top-64">
@@ -60,6 +87,7 @@ import StudyfyImage from "@/assets/Studyfy.png";
 import WiMovieImage from "@/assets/WiMovie.png";
 import YelpCampImage from "@/assets/YelpCamp.png";
 import AnonymousLettersImage from "@/assets/AnonymousLetters.png";
+const isHovered = ref(false);
 const projects = reactive([
   {
     image: UPokemonImage,
@@ -68,6 +96,7 @@ const projects = reactive([
     Description:
       "An imitation of the popular RPG game, Pokemon, a role-playing game based around building a small team of monsters to battle other monsters in a quest to become the best.",
     TechStack: ["C++", "SFML"],
+    link: "https://github.com/Loweso/UP-okemon",
   },
   {
     image: YelpCampImage,
@@ -76,6 +105,7 @@ const projects = reactive([
     Description:
       "YelpCamp is a website where users can create and review campgrounds. In order to review or create a campground, you must have an account. This project was part of Colt Steele's web dev course on udemy.",
     TechStack: ["Node.js", "ExpressJS", "EJS", "MongoDB", "Bootstrap"],
+    link: "https://github.com/arwin50/YelpCamp",
   },
   {
     image: AnonymousLettersImage,
@@ -84,6 +114,7 @@ const projects = reactive([
     Description:
       "Anonymous Letters is a platform for sending messages using codenames.",
     TechStack: ["React", "MongoDB", "TailwindCSS", "ExpressJS", "NodeJS"],
+    link: "https://github.com/arwin50/anonletters",
   },
   {
     image: WiMovieImage,
@@ -92,6 +123,7 @@ const projects = reactive([
     Description:
       "WiMovie is a website for users to rate and save movies to their watchlist.",
     TechStack: ["React", "MongoDB", "TailwindCSS", "ExpressJS"],
+    link: "https://github.com/arwin50/WIMovie",
   },
   {
     image: StudyfyImage,
@@ -100,6 +132,7 @@ const projects = reactive([
     Description:
       "Studyfy is an online platform where students can ask and share questions about a wide range of subjects, fostering a supportive and interactive learning community.",
     TechStack: ["Vue", "MongoDB", "TailwindCSS", "ExpressJS"],
+    link: "https://github.com/arwin50/studyfy",
   },
   /*  {
     name: "Beacon",
@@ -123,6 +156,10 @@ const prev = () => {
   } else if (currentIndex.value == 0) {
     currentIndex.value = projects.length - 1;
   }
+};
+
+const hovered = () => {
+  isHovered.value = !isHovered.value;
 };
 </script>
 

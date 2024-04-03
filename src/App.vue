@@ -22,4 +22,7 @@ body {
 #app {
   height: 100%;
 }
+html {
+  scroll-behavior: smooth;
+}
 </style>

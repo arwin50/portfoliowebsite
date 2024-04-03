@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-center space-x-36 h-full items-center">
+  <div class="w-full flex justify-center space-x-36 h-full items-center" id="about"> 
     <div
       class="w-[30rem] h-[30rem] rounded-full overflow-hidden flex items-center shadow-custom"
     >
