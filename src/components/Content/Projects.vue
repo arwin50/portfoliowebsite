@@ -17,8 +17,8 @@
             :key="index"
             class="w-full flex-shrink-0 px-4 relative"
           >
-            <a :href="project.link"
-              ><div class="p-4 rounded-lg">
+            <div class="p-4 rounded-lg">
+              <a :href="project.link">
                 <div
                   class="w-full h-96 mb-5 rounded-lg overflow-hidden"
                   @mouseenter="hovered"
@@ -50,19 +50,19 @@
                     >
                   </div>
                 </div>
+              </a>
 
-                <h2 class="text-lg font-semibold">{{ project.name }}</h2>
-                <p class="text-sm text-[#6c757d]">{{ project.type }}</p>
-                <p class="mt-2">{{ project.Description }}</p>
-                <div class="mt-2 flex flex-wrap">
-                  <span
-                    v-for="(value, index) in project.TechStack"
-                    class="mr-2 mb-2 bg-[#588157] px-2 py-1 rounded"
-                    >{{ value }}</span
-                  >
-                </div>
+              <h2 class="text-lg font-semibold">{{ project.name }}</h2>
+              <p class="text-sm text-[#6c757d]">{{ project.type }}</p>
+              <p class="mt-2">{{ project.Description }}</p>
+              <div class="mt-2 flex flex-wrap">
+                <span
+                  v-for="(value, index) in project.TechStack"
+                  class="mr-2 mb-2 bg-[#588157] px-2 py-1 rounded"
+                  >{{ value }}</span
+                >
               </div>
-            </a>
+            </div>
           </div>
         </div>
         <button @click="prev" class="absolute left-10 top-64">
@@ -104,7 +104,7 @@ const projects = reactive([
     type: "Web Development Course Project",
     Description:
       "YelpCamp is a website where users can create and review campgrounds. In order to review or create a campground, you must have an account. This project was part of Colt Steele's web dev course on udemy.",
-    TechStack: ["Node.js", "ExpressJS", "EJS", "MongoDB", "Bootstrap"],
+    TechStack: ["ExpressJS", "EJS", "MongoDB", "Bootstrap"],
     link: "https://github.com/arwin50/YelpCamp",
   },
   {
@@ -113,7 +113,7 @@ const projects = reactive([
     type: "Personal Project",
     Description:
       "Anonymous Letters is a platform for sending messages using codenames.",
-    TechStack: ["React", "MongoDB", "TailwindCSS", "ExpressJS", "NodeJS"],
+    TechStack: ["React", "MongoDB", "TailwindCSS", "ExpressJS"],
     link: "https://github.com/arwin50/anonletters",
   },
   {
