@@ -107,7 +107,7 @@ const projects = reactive([
     TechStack: ["ExpressJS", "EJS", "MongoDB", "Bootstrap"],
     link: "https://github.com/arwin50/YelpCamp",
   },
-  {
+ /*  {
     image: AnonymousLettersImage,
     name: "Anonymous Letters",
     type: "Personal Project",
@@ -124,7 +124,7 @@ const projects = reactive([
       "WiMovie is a website for users to rate and save movies to their watchlist.",
     TechStack: ["React", "MongoDB", "TailwindCSS", "ExpressJS"],
     link: "https://github.com/arwin50/WIMovie",
-  },
+  }, */
   {
     image: StudyfyImage,
     name: "Studyfy",
