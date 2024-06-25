@@ -1,12 +1,12 @@
 <template>
-  <div class="h-screen" id="projects">
-    <main class="flex h-full space-x-16">
+  <div class="min-h-screen" id="projects">
+    <main class="flex xs:flex-row flex-col h-full justify-evenly">
       <span
-        class="verticalUpright ml-24 text-5xl flex justify-center tracking-widest font-bold drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]"
+        class="text-3xl md:text-4xl lg:text-5xl flex justify-center tracking-widest font-bold drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] xs:text-upright xs:vertical-rl"
         >PROJECTS</span
       >
       <div
-        class="overflow-hidden flex flex-col justify-center w-[80%] relative"
+        class="overflow-hidden flex flex-col justify-center w-full xs:w-[80%] relative"
       >
         <div
           class="flex transition-transform duration-500 ease-in-out"
@@ -18,15 +18,16 @@
             class="w-full flex-shrink-0 px-4 relative"
           >
             <div class="p-4 rounded-lg">
-              <a :href="project.link">
-                <div
-                  class="w-full h-96 mb-5 rounded-lg overflow-hidden"
-                  @mouseenter="hovered"
-                  @mouseleave="hovered"
-                >
+              <div
+                class="w-full md:h-60 lg:h-96 mb-5 rounded-lg overflow-hidden relative"
+              >
+                <a :href="project.link">
                   <img
                     :src="project.image"
+                    alt="projectimg"
                     class="w-full h-full object-cover cursor-pointer shadow-button"
+                    @mouseenter="hovered"
+                    @mouseleave="hovered"
                     :class="{
                       'hover:opacity-30 hover:transition-opacity duration-500':
                         isHovered,
@@ -44,18 +45,45 @@
                     <img
                       src="@/assets/github-mark-white.svg"
                       class="w-16 h-16"
+                      alt="github icon"
                     />
                     <span class="text-2xl font-link tracking-wide"
                       >Check it out!</span
                     >
                   </div>
-                </div>
-              </a>
+                </a>
+                <button
+                  @click="prev"
+                  class="absolute xs:scale-100 scale-75 top-1/2 xs:ml-5"
+                >
+                  <v-icon
+                    name="io-arrow-back-circle-sharp"
+                    scale="2"
+                    fill="#d6ccc2"
+                  />
+                </button>
+                <button
+                  @click="next"
+                  class="absolute xs:scale-100 scale-75 top-1/2 right-0 xs:mr-5"
+                >
+                  <v-icon
+                    name="io-arrow-forward-circle-sharp"
+                    scale="2"
+                    fill="#d6ccc2"
+                  />
+                </button>
+              </div>
 
-              <h2 class="text-lg font-semibold">{{ project.name }}</h2>
-              <p class="text-sm text-[#6c757d]">{{ project.type }}</p>
-              <p class="mt-2">{{ project.Description }}</p>
-              <div class="mt-2 flex flex-wrap">
+              <h2 class="text-base xs:text-lg font-semibold">
+                {{ project.name }}
+              </h2>
+              <p class="xs:text-sm text-xs text-[#6c757d]">
+                {{ project.type }}
+              </p>
+              <p class="xs:text-base text-sm mt-2">
+                {{ project.Description }}
+              </p>
+              <div class="mt-2 flex flex-wrap xs:text-base text-sm">
                 <span
                   v-for="(value, index) in project.TechStack"
                   class="mr-2 mb-2 bg-[#588157] px-2 py-1 rounded"
@@ -65,16 +93,6 @@
             </div>
           </div>
         </div>
-        <button @click="prev" class="absolute left-10 top-64">
-          <v-icon name="io-arrow-back-circle-sharp" scale="2" fill="#d6ccc2" />
-        </button>
-        <button @click="next" class="absolute right-10 top-64">
-          <v-icon
-            name="io-arrow-forward-circle-sharp"
-            scale="2"
-            fill="#d6ccc2"
-          />
-        </button>
       </div>
     </main>
   </div>
@@ -84,9 +102,7 @@
 import { ref, reactive } from "vue";
 import UPokemonImage from "@/assets/UPokemon.png";
 import StudyfyImage from "@/assets/Studyfy.png";
-import WiMovieImage from "@/assets/WiMovie.png";
 import YelpCampImage from "@/assets/YelpCamp.png";
-import AnonymousLettersImage from "@/assets/AnonymousLetters.png";
 const isHovered = ref(false);
 const projects = reactive([
   {
@@ -107,7 +123,7 @@ const projects = reactive([
     TechStack: ["ExpressJS", "EJS", "MongoDB", "Bootstrap"],
     link: "https://github.com/arwin50/YelpCamp",
   },
- /*  {
+  /*  {
     image: AnonymousLettersImage,
     name: "Anonymous Letters",
     type: "Personal Project",
@@ -164,10 +180,10 @@ const hovered = () => {
 </script>
 
 <style scoped>
-.verticalUpright {
+/* .verticalUpright {
   writing-mode: vertical-rl;
   text-orientation: upright;
-}
+} */
 </style>
 
 <!-- Projects

@@ -6,7 +6,9 @@
       >
         Other Projects
       </h1>
-      <div class="grid grid-cols-3 grid-rows-2 place-items-center gap-y-5">
+      <div
+        class="grid xs:grid-cols-2 xs:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 place-items-center gap-y-5"
+      >
         <ProjectCard
           v-for="(project, index) in projects"
           :key="index"

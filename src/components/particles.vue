@@ -17,7 +17,7 @@
           },
         },
         fullScreen: {
-          enable: false,
+          enable: true,
           zIndex: -100,
         },
         fpsLimit: 120,

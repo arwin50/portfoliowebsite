@@ -1,6 +1,5 @@
 <script setup>
 import { RouterView } from "vue-router";
-import Particles from "./components/particles.vue";
 import NavigationBar from "./components/Navigation/NavigationBar.vue";
 </script>
 
